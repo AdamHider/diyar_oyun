@@ -1,10 +1,13 @@
 
-var FirstGame = {    
+var FirstGame = {  
+    tag_id: 44,
     config: {
         
     },
     init: function(){
         FirstGame.initControls();
+        FirstGame.loadTagList();
+        FirstGame.loadWordList();
     },
 
     initControls: function(){
@@ -24,8 +27,38 @@ var FirstGame = {
     },
     
     //render something
-    load: function(){
-        
+    loadTagList: function(){
+        jQuery.ajax({
+            url: "https://diyar.im/index.php?option=com_ajax&module=oyun&method=getWordTagList&format=json",
+            type: "POST",
+            beforeSend: function() {
+            },
+            complete: function() {
+            },
+            success: function (response){
+                if(response.data){
+                    console.log(response.data);
+                }
+                    
+            }
+        });
+    },
+    loadWordList: function(){
+        jQuery.ajax({
+            url: "https://diyar.im/index.php?option=com_ajax&module=oyun&method=getWordList&format=json",
+            type: "POST",
+            data: {tag_id: FirstGame.tag_id},
+            beforeSend: function() {
+            },
+            complete: function() {
+            },
+            success: function (response){
+                if(response.data){
+                    console.log(response.data);
+                }
+                    
+            }
+        });
     },
     
     //render something
@@ -35,6 +68,5 @@ var FirstGame = {
 };
 
 
-FirstGame.init();
 
 
