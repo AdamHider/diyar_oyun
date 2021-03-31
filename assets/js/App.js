@@ -71,7 +71,8 @@ var OyunApp = {
         allLanguages: {
             en: Eng,
             ru: Rus,
-            crh: Crh
+            crh: Crh,
+            ua: Ukr
         },
         config:{
             ru:{
@@ -91,11 +92,19 @@ var OyunApp = {
                 list: {}
             },
             crh: {
-                db_index: 3,
+                db_index: 2,
                 tag: 'crh',
                 joomla_tag: 'crh-CRH',
                 flag: 'crh_crh',
                 system_index: 4,
+                list: {}
+            },
+            ua: {
+                db_index: 3,
+                tag: 'ua',
+                joomla_tag: 'ua-UA',
+                flag: 'ua-ua',
+                system_index: 5,
                 list: {}
             }
         },
